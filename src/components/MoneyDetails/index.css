@@ -1,0 +1,78 @@
+/* Write your CSS here */
+.card-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+  border: 16px;
+  border-color: #84cc16;
+}
+.balance-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 15px;
+
+  background-color: #ecfccb;
+  background-size: cover;
+  box-shadow: 0 2px 2px #ecfccb;
+
+  margin-top: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+}
+.price-img {
+  height: 80px;
+
+  margin: 20px;
+  width: 80px;
+}
+.ruppes {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.user-balance {
+  font-family: 'Roboto';
+  font-size: 22px;
+  color: #7e858e;
+}
+.paragraph {
+  font-family: 'Roboto';
+  font-size: 32px;
+  color: #334155;
+}
+.Income-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: #cffafe;
+  background-size: cover;
+  box-shadow: 0 2px 2px #cffafe;
+
+  margin-top: 15px;
+  border-radius: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+}
+.Expenses-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: #ede9fe;
+  background-size: cover;
+  box-shadow: 0 2px 2px #ede9fe;
+
+  margin-top: 15px;
+  border-radius: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,130 @@
+/* Write your CSS here */
+.main-container {
+  height: 100%;
+  margin: 10px;
+}
+.mini-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  background-size: cover;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.greetion {
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 33px;
+}
+.message {
+  color: #7e858e;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+.special {
+  color: #0b69ff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: bold;
+}
+.forms {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  background-size: cover;
+  box-shadow: 0 2px 2px #7e858e;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+  border: 6px;
+}
+.heading {
+  margin: 10px;
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 25px;
+}
+.formInput {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: space-between;
+}
+.label {
+  color: #7e858e;
+  margin: 10px;
+
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+.input {
+  color: #7e858e;
+  font-family: 'Roboto';
+  font-size: 18px;
+  padding: 5px;
+
+  margin: 10px;
+}
+.type {
+  color: #7e858e;
+  font-family: 'Roboto';
+  font-size: 18px;
+  padding: 5px;
+
+  margin: 10px;
+}
+.btn-add {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 24px;
+  margin: 10px;
+  background-color: #0b69ff;
+  border-radius: 8px;
+  width: 94px;
+  border-color: transparent;
+}
+
+.last-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  background-size: cover;
+  box-shadow: 0 2px 2px #7e858e;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin: 20px;
+  margin-bottom: 15px;
+  border: 6px;
+}
+.item-heading {
+  margin: 10px;
+  color: #1e293b;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: bold;
+}
+.history-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 9px;
+  background-color: #ffffff;
+  background-size: cover;
+  box-shadow: 0 2px 2px #7e858e;
+
+  margin-top: 15px;
+  margin: 20px;
+  margin-bottom: 25px;
+  border: 6px;
+}
+.headings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
