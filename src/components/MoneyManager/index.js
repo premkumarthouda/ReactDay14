@@ -1,8 +1,10 @@
 import {Component} from 'react'
 
+import {v4} from 'uuid'
+
 import MoneyDetails from '../MoneyDetails'
 
-import {v4} from 'uuid'
+import TransactionItem from '../TransactionItem'
 
 import './index.css'
 
@@ -44,21 +46,72 @@ class MoneyManager extends Component {
   onClickAdd = event => {
     event.preventDefault()
     const {titleInput, amountInput, typeInput} = this.state
-    const newTransaction = {
-      id: v4(),
-      title: titleInput,
-      amount: parseInt(amountInput),
-      type: typeInput,
+
+    if (amountInput !== '' && titleInput !== '') {
+      const newTransaction = {
+        id: v4(),
+        title: titleInput,
+        amount: parseInt(amountInput),
+        type: transactionTypeOptions.find(
+          eachItem => eachItem.optionId === typeInput,
+        ).displayText,
+      }
+      if (typeInput === 'INCOME') {
+        this.setState(prevSate => ({
+          balance: prevSate.balance + parseInt(amountInput),
+          income: prevSate.income + parseInt(amountInput),
+        }))
+      } else {
+        this.setState(prevSate => ({
+          balance: prevSate.balance - parseInt(amountInput),
+          expenses: prevSate.expenses + parseInt(amountInput),
+        }))
+      }
+      this.setState(prevSate => ({
+        transactionList: [...prevSate.transactionList, newTransaction],
+        titleInput: '',
+        amountInput: '',
+        typeInput: 'INCOME',
+      }))
     }
-    this.setState(prevSate => ({
-      transactionList: [...prevSate.transactionList, newTransaction],
-      titleInput: '',
-      amountInput: '',
-    }))
+  }
+
+  onClickDetele = id => {
+    this.setState(prevState => {
+      const filteredList = prevState.transactionList.filter(
+        eachItem => eachItem.id !== id,
+      )
+      const deletedTransaction = prevState.transactionList.find(
+        eachItem => eachItem.id === id,
+      )
+      if (!deletedTransaction) return {}
+
+      if (deletedTransaction.type === 'INCOME') {
+        return {
+          transactionList: filteredList,
+          balance: prevState.balance - deletedTransaction.amount,
+          income: prevState.income - deletedTransaction.amount,
+        }
+      } else {
+        return {
+          transactionList: filteredList,
+          balance: prevState.balance + deletedTransaction.amount,
+          expenses: prevState.expenses - deletedTransaction.amount,
+        }
+      }
+    })
   }
 
   render() {
-    const {titleInput, amountInput, typeInput} = this.state
+    const {
+      titleInput,
+      amountInput,
+      typeInput,
+      balance,
+      income,
+      expenses,
+      transactionList,
+    } = this.state
 
     return (
       <div className="main-container">
@@ -69,7 +122,7 @@ class MoneyManager extends Component {
           </p>
         </div>
         <div className="Balance">
-          <MoneyDetails />
+          <MoneyDetails BALANCE={balance} INCOME={income} EXPENSES={expenses} />
         </div>
         <div className="forms">
           <h1 className="heading">Add Transaction</h1>
@@ -106,7 +159,7 @@ class MoneyManager extends Component {
               value={typeInput}
             >
               {transactionTypeOptions.map(each => (
-                <option key={each.id} value={typeInput}>
+                <option key={each.optionId} value={each.optionId}>
                   {each.displayText}
                 </option>
               ))}
@@ -124,7 +177,17 @@ class MoneyManager extends Component {
               <p className="item-heading">Amount</p>
               <p className="item-heading">Type</p>
             </div>
-            <ul>// append from Trasanctionitem</ul>
+          </div>
+          <div className="history-container-1">
+            <ul className="unordered-items">
+              {transactionList.map(eachItem => (
+                <TransactionItem
+                  itemDetails={eachItem}
+                  key={eachItem.id}
+                  onClickDetele={this.onClickDetele}
+                />
+              ))}
+            </ul>
           </div>
         </div>
       </div>
