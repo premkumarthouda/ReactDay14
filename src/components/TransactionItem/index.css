@@ -1,1 +1,26 @@
 /* Write your CSS here */
+/* Write your CSS here */
+.tansaction-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.t-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+.paragraph1 {
+  font-family: 'Roboto';
+  color: #334155;
+  font-size: 20px;
+}
+.delete {
+  height: 35px;
+  width: 30px;
+}
+.delete-btn {
+  background-color: transparent;
+  border-color: transparent;
+}
