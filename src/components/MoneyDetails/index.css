@@ -76,3 +76,23 @@
   margin: 20px;
   margin-bottom: 15px;
 }
+@media screen and (min-width: 768px) {
+  .card-container {
+    flex-direction: row;
+    margin: 0px;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  .balance-container {
+    width: 35%;
+    margin: 18px;
+  }
+  .Income-container {
+    width: 35%;
+    margin: 18px;
+  }
+  .Expenses-container {
+    width: 35%;
+    margin: 18px;
+  }
+}
